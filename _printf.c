@@ -1,47 +1,48 @@
 #include "main.h"
 
 /**
- * _printf - produces output according to a format
- * @format: format string containing the characters and the specifiers
- * Description: this function will call the get_print() function that will
- * determine which printing function to call depending on the conversion
- * specifiers contained into format
- * Return: length of the formatted output string
+ * _printf - produce output according to a format
+ * @format: input constant
+ * Return: size of buffer (when successful) or -1 if unsuccessful
  */
+
 int _printf(const char *format, ...)
 {
-	int (*pfunc)(va_list, flags_t *);
-	const char *p;
-	va_list arguments;
-	flags_t flags = {0, 0, 0};
-
-	register int count = 0;
-
-	va_start(arguments, format);
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
-	for (p = format; *p; p++)
+	if (format != NULL)
 	{
-		if (*p == '%')
+		va_list argu;
+		unsigned int i;
+
+		char *buf, *temp_str;
+
+		va_start(argu, format);
+		buf = _calloc(2048, sizeof(char));
+
+		if (buf == NULL)
+			return (-1);
+
+		i = 0;
+		while (format && format[i] != 00)
 		{
-			p++;
-			if (*p == '%')
+			if (format[0] == 37 && format[1] == 00)
 			{
-				count += _putchar('%');
-				continue;
+				return (-1);
 			}
-			while (get_flag(*p, &flags))
-				p++;
-			pfunc = get_print(*p);
-			count += (pfunc)
-				? pfunc(arguments, &flags)
-				: _printf("%%%c", *p);
-		} else
-			count += _putchar(*p);
+			i = _strncat(buf, format, i);
+			if (format[i] == 37)
+			{
+				i++;
+				temp_str = fntn(format[i], argu);
+				_strcat(buf, temp_str);
+			}
+			if (format[i] != 00)
+				i++;
+		}
+		i = _strlen(buf);
+		write(1, buf, i);
+		va_end(argu);
+		free(buf);
+		return (i);
 	}
-	_putchar(-1);
-	va_end(arguments);
-	return (count);
+	return (-1);
 }
