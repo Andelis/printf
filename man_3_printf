@@ -1,0 +1,57 @@
+.\" Manpage for _printf project
+.TH man 3 "17 Oct 2022" "3.0" "_Printf Project Man Page"
+.SH NAME
+._printf
+\_printf - This function produces output according to a format.
+.SH SYNOPSIS
+
+#include "main.h"
+
+int _printf(const char *format, ...)
+
+_printf[ARGUMENTS]...
+.SH DESCRIPTION
+
+The printf function is a character pointer, each call points to the format control string, which describes and specifies the output format, this string consists of the conversion specifiers, which together with the percent (%) sign (described later in this manual) gets a precise output format to print numerical values or ASCII characters from the format specifiers that have been passed on to the argument (the format control string specifies how arguments are converted).
+
+This version of
+.B _printf
+includes our version of the printf function, the basic and main functions.
+
+.B Return:
+The number of characters printed (excluding the null byte used to end the output to the string).
+.TP
+Conversion specifiers: There are a many different conversion specifiers that can be used for various data types.
+
+.B %c
+- print a single character.
+
+.B %s
+- print a string.
+
+.B %d
+- print a integer as a signed decimal (base 10) number.
+
+.B %i
+- print same as "d", integer in base 10.
+
+.B %
+- print a percent sign (%).
+.TP
+A conversion specifier begins with a percent sign and ends with the conversion characters shown below.
+
+.SH EXAMPLE
+
+_printf("Character: %c", character);
+
+_printf("String: %s", string);
+.TP
+_printf("Integer: %d", integer);
+(or use "%i" for print integer, depends of the case).
+.SH SEE ALSO
+
+printf(1), _printf(2), printf(3), sprintf(), snprintf(), vsprintf(), vsnprintf().
+
+.SH AUTHOR
+
+Etieno Andem and Ikwuka Okoye - Students at ALX Full Stack Software Engineering program.
