@@ -1,6 +1,6 @@
 # `printf()`
 
-The `printf()` function is a C (programming language) built-in function that prints/outputs a specified message to the screen/console window. We, @Andelis and @ikwuka are tasked to create our printf function that produces output according to a format.
+The `printf()` function is a C (programming language) built-in function that prints/outputs a specified message to the console window. We, @Andelis and @ikwuka are tasked to create our printf function that produces output according to a format.
 
 **Description**
 ================
@@ -40,13 +40,13 @@ The _printf function produces output according to a format:
 
 |file|description|
 |--|--|
-|*main.h*|Contains the struct and prototypes to the _printf function|
+|*main.h*|Contains the struct and prototypes of the _printf function|
 |*_printf.c*|Contain the main function of the _printf
 
 **Contributing**
 ====================
 
-This is a project for [ALX Full Stack Software Engineer](https://www.alxafrica.com/) pioneered by the African Leadership Group (ALG).
+This is a project for [ALX Full Stack Software Engineer](https://www.alxafrica.com/)
 
 **Authors**
 =========
