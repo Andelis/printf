@@ -38,6 +38,7 @@ Conversion specifiers: There are a many different conversion specifiers that can
 
 .B %
 - print a percent sign (%).
+
 .TP
 A conversion specifier begins with a percent sign and ends with the conversion characters shown below.
 
@@ -46,13 +47,15 @@ A conversion specifier begins with a percent sign and ends with the conversion c
 _printf("Character: %c", character);
 
 _printf("String: %s", string);
+
 .TP
 _printf("Integer: %d", integer);
 (or use "%i" for print integer, depends of the case).
+
 .SH SEE ALSO
 
 printf(1), _printf(2), printf(3), sprintf(), snprintf(), vsprintf(), vsnprintf().
 
 .SH AUTHOR
 
-Etieno Andem and Ikwuka Okoye - Students at ALX Full Stack Software Engineering program.
+Etieno Andem and Ikwuka Okoye - Students of ALX Full Stack Software Engineering program.
